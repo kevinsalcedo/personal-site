@@ -5,62 +5,70 @@ import { jobs } from "../data/work";
 
 class Experience extends React.Component {
   state = {
-    activeWork: "Conduent"
+    index: 0
   };
 
-  toggleWork = (e, item) => {
-    this.setState({ activeWork: item.name });
+  toggleWork = index => {
+    this.setState(({ index }));
   };
 
   render() {
-    const { activeWork } = this.state;
-    const selected = jobs.find(({ name }) => name === activeWork);
+    const { index } = this.state;
+    const job = jobs[ index ];
     return (
-      <div className="trails-main">
+      <div>
         <Container text>
-          <Grid columns={2} relaxed="very">
+          <Grid columns={ 2 } relaxed="very" stackable>
             <Grid.Column>
-              <Menu secondary vertical stackable>
-                {jobs.map(({ name }) => {
+              <Menu secondary vertical compact>
+                { jobs.map(({ name }, jobIndex) => {
                   return (
                     <Menu.Item
-                      name={name}
-                      key={name}
-                      active={activeWork === name}
-                      onClick={this.toggleWork}
+                      name={ name }
+                      key={ name }
+                      active={ index === jobIndex }
+                      onClick={ () => this.toggleWork(jobIndex) }
                     >
-                      {name}
+                      { name }
                     </Menu.Item>
                   );
-                })}
+                }) }
               </Menu>
             </Grid.Column>
             <Grid.Column>
               <Transition
-                items={activeWork}
-                from={{
+                items={ index }
+                from={ {
                   position: "absolute",
-                  transform: "translate3d(0,-50px,0)",
+                  transform: "translate3d(0,-100px,0)",
                   opacity: 0
-                }}
-                enter={{ transform: "translate3d(0,0px,0)", opacity: 1 }}
-                leave={{ transform: "translate3d(0,-50px,0)", opacity: 0 }}
+                } }
+                enter={ { transform: "translate3d(0,0px,0)", opacity: 1 } }
+                leave={ { transform: "translate3d(0,100px,0)", opacity: 0 } }
+                config={ {
+                  mass: 10,
+                  tension: 125,
+                  friction: 75
+                } }
               >
-                {() => props => (
-                  <div style={props}>
-                    <h3>{selected.title}</h3>
-                    <List>
-                      {selected.description.map((item, i) => (
-                        <List.Item key={i}>{item}</List.Item>
-                      ))}
-                    </List>
-                  </div>
-                )}
+                { newIndex => props => {
+                  const newJob = jobs[ newIndex ];
+                  return (
+                    <div style={ props }>
+                      <h3>{ newJob.title }</h3>
+                      <List>
+                        { newJob.description.map((item, i) => (
+                          <List.Item key={ i }>{ item }</List.Item>
+                        )) }
+                      </List>
+                    </div>
+                  )
+                } }
               </Transition>
             </Grid.Column>
           </Grid>
         </Container>
-      </div>
+      </div >
     );
   }
 }
