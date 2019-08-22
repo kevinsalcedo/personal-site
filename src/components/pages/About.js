@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="trails-main">
+    <div>
       <h1>It me</h1>
     </div>
   );
