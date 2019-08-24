@@ -3,10 +3,16 @@ import ParaLayer from "../elements/ParaLayer";
 import corner from "../../assets/corner_top.png";
 import corner_bottom from "../../assets/corner_bottom.png";
 
+const topMargin = 12;
+const bottomMargin = 100 - topMargin;
+
 const PageFrame = props => {
   return (
     <>
-      <ParaLayer {...props} style={{ marginLeft: "10vw", marginTop: "10vh" }}>
+      <ParaLayer
+        {...props}
+        style={{ marginLeft: `${topMargin}vw`, marginTop: `${topMargin}vh` }}
+      >
         <img
           style={{
             display: "block",
@@ -21,8 +27,8 @@ const PageFrame = props => {
       <ParaLayer
         {...props}
         style={{
-          marginLeft: "90vw",
-          marginTop: "90vh"
+          marginLeft: `${bottomMargin}vw`,
+          marginTop: `${bottomMargin}vh`
         }}
       >
         <img
