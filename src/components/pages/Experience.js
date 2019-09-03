@@ -72,16 +72,14 @@ class Experience extends React.Component {
   renderGrid = () => {
     const { index } = this.state;
     return (
-      <Container className="" >
-        <Row >
-          <Col xs={ 12 } md={ 2 } />
+      <Container className="parallax-grid">
+        <Row className="justify-content-md-center">
           <Col xs={ 12 } md={ 4 } >
             { this.renderSelect(index) }
           </Col>
           <Col xs={ 12 } md={ 4 } >
             { this.renderDescription(index) }
           </Col>
-          <Col xs={ 12 } md={ 2 } />
         </Row>
       </Container >
     )
