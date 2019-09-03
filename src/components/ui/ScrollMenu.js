@@ -1,13 +1,19 @@
 import React from "react";
-import { Menu } from "semantic-ui-react";
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
 const ScrollMenu = props => {
   return (
-    <Menu floated="right" secondary stackable>
-      <Menu.Item onClick={() => props.doScroll(0)}>Home</Menu.Item>
-      <Menu.Item onClick={() => props.doScroll(1)}>About</Menu.Item>
-      <Menu.Item onClick={() => props.doScroll(2)}>Work</Menu.Item>
-    </Menu>
+    <Navbar bg="light" variant="light" collapseOnSelect expand="md">
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="justify-content-end">
+          <Nav.Link onClick={ () => props.doScroll(0) }>Home</Nav.Link>
+          <Nav.Link onClick={ () => props.doScroll(1) }>About</Nav.Link>
+          <Nav.Link onClick={ () => props.doScroll(2) }>Work</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 

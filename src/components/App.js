@@ -45,7 +45,7 @@ class App extends React.Component {
           </ParaLayer>
         </Parallax>
 
-        {/* <ScrollMenu doScroll={ this.doScroll } /> */ }
+        <ScrollMenu doScroll={ this.doScroll } />
       </div>
     );
   }
