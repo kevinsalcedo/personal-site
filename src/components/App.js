@@ -15,30 +15,33 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Parallax ref={ ref => (this.parallax = ref) } pages={ 3 }>
-          {/* Frames for each apge */ }
-          <PageFrame offset={ 0 } speed={ 0 } />
-          <PageFrame offset={ 1 } speed={ 0 } />
-          <PageFrame offset={ 2 } speed={ 0 } />
+        <Parallax ref={ref => (this.parallax = ref)} pages={3}>
+          {/* Frames for each apge */}
+          <PageFrame offset={0} speed={0} />
+          <PageFrame offset={1} speed={0} />
+          <PageFrame offset={2} speed={0} />
 
-          {/* Titles go after the frames */ }
-          <ParaLayer offset={ 2.20 } speed={ 0.5 } center>
-            <h2>Work Experience</h2>
+          {/* Titles go after the frames */}
+          <ParaLayer offset={1.2} speed={0.5} center>
+            <h2 className="trails-header">About the Dev</h2>
+          </ParaLayer>
+          <ParaLayer offset={2.2} speed={0.5} center>
+            <h2 className="trails-header">Work Experience</h2>
           </ParaLayer>
 
-          {/* Components loaded last to be interactive */ }
-          <ParaLayer offset={ 0 } speed={ 0.25 } middle center>
+          {/* Components loaded last to be interactive */}
+          <ParaLayer offset={0} speed={0.25} middle center>
             <Home />
           </ParaLayer>
-          <ParaLayer offset={ 1 } speed={ 0.25 } middle center>
+          <ParaLayer offset={1.08} speed={0.25} middle center>
             <About />
           </ParaLayer>
-          <ParaLayer offset={ 2 } speed={ 0.25 } middle center>
+          <ParaLayer offset={2} speed={0.25} middle center>
             <Experience />
           </ParaLayer>
         </Parallax>
 
-        <ScrollMenu doScroll={ this.doScroll } />
+        <ScrollMenu doScroll={this.doScroll} />
       </div>
     );
   }
