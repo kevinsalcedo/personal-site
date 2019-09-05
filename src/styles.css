@@ -30,6 +30,12 @@ body {
   width: 75vw;
 }
 
+.mah-face {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
 .trails-text {
   width: 100%;
   height: 6vw;
@@ -39,7 +45,6 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   will-change: transform, opacity;
-  overflow: hidden;
 }
 
 .trails-sub {
@@ -51,9 +56,77 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   will-change: transform, opacity;
-  overflow: hidden;
 }
 
+.trails-body {
+  width: 100%;
+  line-height: 3vw;
+  color: slategray;
+  font-size: 1.5vw;
+  font-weight: 600;
+  will-change: transform;
+}
+
+.trails-menu {
+  width: 100%;
+  line-height: 2vh;
+  color: slategray;
+  font-size: 2vh;
+  font-weight: 400;
+  will-change: transform;
+  background-color: transparent;
+  border: none;
+}
+
+.trails-menu.active {
+  background-color: #c9c9c9;
+  border-radius: 5px;
+}
+
+.trails-menu-text {
+  width: 100%;
+  line-height: 3vh;
+  color: slategray;
+  font-size: 2.5vh;
+  font-weight: 400;
+  will-change: transform;
+  background-color: transparent;
+  border: none;
+}
+
+.trails-nav {
+  line-height: 3vh;
+  color: darkslategray;
+  font-size: 2.5vh;
+  font-weight: 400;
+}
+
+.trails-header {
+  line-height: 4vh;
+  color: darkslategray;
+  font-size: 4vh;
+  font-weight: 600;
+}
+
+.trails-header-2 {
+  line-height: 3vh;
+  color: darkslategray;
+  font-size: 3vh;
+  font-weight: 600;
+  padding-left: 1.25rem;
+}
+
+@media (max-width: 800px) {
+  .trails-body {
+    line-height: 4vh;
+    font-size: 2vh;
+  }
+}
+@media (max-width: 768px) {
+  .mah-face {
+    width: 75%;
+  }
+}
 @media (max-width: 700px) {
   .trails-text {
     line-height: 6vw;
