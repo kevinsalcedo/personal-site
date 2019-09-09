@@ -12,10 +12,13 @@ class Experience extends React.Component {
     index: 0
   };
 
+  // Changes the current selected work place
   toggleWork = index => {
     this.setState({ index });
   };
 
+  // Param: index - the current active index of the list
+  // Render the menu that lists each workplace
   renderSelect = index => {
     return (
       <ListGroup variant="flush">
@@ -35,6 +38,8 @@ class Experience extends React.Component {
     );
   };
 
+  // Param: index - the current active index in the list
+  // Renders the description of the active workplace
   renderDescription = index => {
     const offset = -150;
     return (
@@ -74,6 +79,7 @@ class Experience extends React.Component {
     );
   };
 
+  // Render the Bootstrap grid containing both the menu and descriptions
   renderGrid = () => {
     const { index } = this.state;
     return (
