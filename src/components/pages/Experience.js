@@ -43,7 +43,7 @@ class Experience extends React.Component {
   renderDescription = index => {
     const offset = -150;
     return (
-      <div style={{ postiion: "relative" }}>
+      <div>
         <Transition
           items={index}
           style={{ position: "relative" }}
@@ -83,9 +83,12 @@ class Experience extends React.Component {
   renderGrid = () => {
     const { index } = this.state;
     return (
-      <Container className="parallax-grid" style={{ height: "25vh" }}>
+      <Container
+        className="parallax-grid justify-content-center"
+        style={{ height: "25vh" }}
+      >
         <Row className="justify-content-center">
-          <Col xs={12} lg={4} className="justify-content-center">
+          <Col xs={12} lg={4}>
             {this.renderSelect(index)}
           </Col>
           <Col xs={12} lg={6}>
