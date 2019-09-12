@@ -21,7 +21,7 @@ class ScrollMenu extends React.Component {
     const ref = this.props.parallax.current;
     const currentPosition = ref.current;
     const pageSize = ref.space;
-    const val = Math.floor((currentPosition + pageSize / 10) / pageSize);
+    const val = Math.floor((currentPosition + pageSize / 8) / pageSize);
 
     if (activeItem !== val) {
       this.setState({ activeItem: val });
@@ -31,8 +31,8 @@ class ScrollMenu extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Container>
-        <Navbar expand="md">
+      <Container className="scroll-menu">
+        <Navbar expand="md" sticky="top">
           <Navbar.Toggle
             className="ml-auto"
             aria-controls="responsive-navbar-nav"
