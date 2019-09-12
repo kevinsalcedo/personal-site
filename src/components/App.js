@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
 import Home from "./pages/Home";
 import Experience from "./pages/Experience";
 import About from "./pages/About";
@@ -27,16 +28,15 @@ class App extends React.Component {
           <PageFrame offset={1} speed={0} />
           <PageFrame offset={2} speed={0} />
           <PageFrame offset={3} speed={0} />
-
           {/* Titles go after the frames */}
-          <ParaLayer offset={1.2} speed={0.5} center>
+          <ParaLayer offset={1.175} speed={0.5} center>
             <h2 className="trails-header">About the Dev</h2>
           </ParaLayer>
           <ParaLayer offset={2.2} speed={0.5} center>
             <h2 className="trails-header">Work Experience</h2>
           </ParaLayer>
           <ParaLayer offset={3.2} speed={0.5} center>
-            <h2 className="trails-header">Contact</h2>
+            <h2 className="trails-header">Let's Chat</h2>
           </ParaLayer>
 
           {/* Components loaded last to be interactive */}
@@ -51,6 +51,16 @@ class App extends React.Component {
           </ParaLayer>
           <ParaLayer offset={3} speed={0.25} middle center>
             <Contact />
+          </ParaLayer>
+          <ParaLayer offset={3.2} speed={0.5} middle center>
+            <Button
+              href="mailto:kevsalcedo@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              size="lg"
+            >
+              Say Hi!
+            </Button>
           </ParaLayer>
         </Parallax>
 
